@@ -5,7 +5,7 @@ const translations: Resource = {
     translation: {
       component: {
         header: {
-          title: 'My Amazing Website',
+          title: 'Podcaster',
         },
       },
       page: {
@@ -19,7 +19,7 @@ const translations: Resource = {
     translation: {
       component: {
         header: {
-          title: 'My Amazing Website',
+          title: 'Podcaster',
         },
       },
       page: {
