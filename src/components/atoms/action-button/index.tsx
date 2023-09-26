@@ -1,14 +1,19 @@
 import React, { ReactNode } from 'react'
 
-import * as S from './styled'
-
 type ParamTypes = {
   children: ReactNode
   onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
+// background-color: gold;
+// border-radius: 25px;
+// cursor: pointer;
+// height: 30px;
+// padding-left: 12px;
+// padding-right: 12px;
+
 const ActionButton = ({ children, onClick }: ParamTypes): JSX.Element => {
-  return <S.Button onClick={onClick}>{children}</S.Button>
+  return <button onClick={onClick}>{children}</button>
 }
 
 export default ActionButton
