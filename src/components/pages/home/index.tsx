@@ -1,7 +1,8 @@
 import React from 'react'
 
-import FilterBar from './components/filter-bar'
 import MainTemplate from 'components/templates/main'
+import FilterBar from './components/filter-bar'
+import PodcastList from './components/podcast-list'
 
 const Home = (): JSX.Element => {
   return (
@@ -9,7 +10,9 @@ const Home = (): JSX.Element => {
       <div className='mt-4 mr-4 flex justify-end'>
         <FilterBar />
       </div>
-      <div>Podcasts</div>
+      <div className='my-12 px-4'>
+        <PodcastList />
+      </div>
     </MainTemplate>
   )
 }

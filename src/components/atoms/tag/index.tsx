@@ -7,7 +7,7 @@ interface Props {
 const Tag = ({ value }: Props): JSX.Element => {
   if (!value) return <></>
 
-  return <div className='px-2 rounded-lg bg-cyan-500 text-white'>{value}</div>
+  return <div className='px-2 rounded-lg font-bold bg-cyan-500 text-white'>{value}</div>
 }
 
 export default Tag
