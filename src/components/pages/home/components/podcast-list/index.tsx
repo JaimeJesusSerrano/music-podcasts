@@ -1,21 +1,14 @@
 import React from 'react'
 
-import usePodcasts from 'hooks/usePodcasts'
+import Podcast from 'types/model/Podcast'
+
 import PodcastListItem from '../podcast-list-item'
 
-const PodcastList = (): JSX.Element => {
-  const { isLoading, error, data: podcasts } = usePodcasts()
+interface Props {
+  podcasts: Podcast[]
+}
 
-  if (isLoading) {
-    return <div>Loading</div>
-  }
-
-  if (error) {
-    return <div>There is an error</div>
-  }
-
-  console.log(podcasts)
-
+const PodcastList = ({ podcasts }: Props): JSX.Element => {
   return (
     <div className='grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 gap-y-24 items-start'>
       {podcasts?.map(podcast => (
