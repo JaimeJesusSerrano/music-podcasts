@@ -1,14 +1,7 @@
-interface PodcastImages {
-  attributes: {
-    height: string
-  }
-  label: string
-}
-
 interface Podcast {
   id: string
   artist: string
-  images: PodcastImages[]
+  images: string[]
   name: string
   summary: string
 }

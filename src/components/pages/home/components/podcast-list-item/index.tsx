@@ -28,7 +28,7 @@ const PodcastListItem = ({ podcast }: Props): JSX.Element => {
             alt={podcast.name}
             className='relative -top-12 w-24 rounded-full border border-gray-400'
             loading='lazy'
-            src={podcast.images[0].label}
+            src={podcast.images[0]}
           />
         </div>
       ) : (

@@ -12,7 +12,7 @@ const fetchPodcasts = async (limit: number = 100): Promise<Podcast[]> => {
     return {
       id: podcast.id.attributes['im:id'],
       artist: podcast['im:artist'].label,
-      images: podcast['im:image'],
+      images: podcast['im:image'].map(images => images.label),
       name: podcast['im:name'].label,
       summary: podcast.summary.label,
     }
