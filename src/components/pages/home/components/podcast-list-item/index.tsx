@@ -1,5 +1,7 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
+import routes from 'config/routes'
 import Podcast from 'types/model/Podcast'
 
 interface Props {
@@ -7,10 +9,19 @@ interface Props {
 }
 
 const PodcastListItem = ({ podcast }: Props): JSX.Element => {
+  const navigate = useNavigate()
+
+  const onClickItem = () => {
+    navigate(routes.podcast.path.replace(':podcastId', podcast.id))
+  }
+
   if (!podcast) return <></>
 
   return (
-    <div className='w-52 p-4 flex flex-col justify-self-center border border-gray-200 shadow-md'>
+    <div
+      className='w-52 p-4 flex flex-col justify-self-center border border-gray-200 shadow-md cursor-pointer'
+      onClick={onClickItem}
+    >
       {podcast.images?.length ? (
         <div className='flex justify-center	'>
           <img

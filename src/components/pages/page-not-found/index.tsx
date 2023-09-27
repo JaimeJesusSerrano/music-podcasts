@@ -3,6 +3,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 
 import MainTemplate from 'components/templates/main'
+
 const PageNotFound = (): JSX.Element => {
   const { t } = useTranslation()
 

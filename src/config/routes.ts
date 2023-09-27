@@ -2,7 +2,7 @@ import { lazy, LazyExoticComponent } from 'react'
 
 const Home = lazy(() => import(/* webpackChunkName: "Home" */ 'components/pages/home'))
 const PageNotFound = lazy(() => import(/* webpackChunkName: "PageNotFound" */ 'components/pages/page-not-found'))
-// const Podcast = lazy(() => import(/* webpackChunkName: "Podcast" */ 'components/pages/podcast'))
+const Podcast = lazy(() => import(/* webpackChunkName: "Podcast" */ 'components/pages/podcast'))
 // const PodcastEpisode = lazy(() => import(/* webpackChunkName: "PodcastEpisode" */ 'components/pages/podcast-episode'))
 
 type JSXComponent = () => JSX.Element
@@ -28,11 +28,11 @@ const routes: IRoutes = {
     name: 'Page not found',
     path: '/page-not-found',
   },
-  // podcast: {
-  //   component: Podcast,
-  //   name: 'Podcast',
-  //   path: '/podcast/:podcastId',
-  // },
+  podcast: {
+    component: Podcast,
+    name: 'Podcast',
+    path: '/podcast/:podcastId',
+  },
   // podcastEpisode: {
   //   component: PodcastEpisode,
   //   name: 'Podcast Episode',
