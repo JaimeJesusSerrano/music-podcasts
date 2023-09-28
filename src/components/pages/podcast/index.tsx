@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import PodcastCard from 'components/molecules/podcast-card'
 import MainTemplate from 'components/templates/main'
 import usePodcast from 'hooks/usePodcast'
+
 import PodcastEpisodes from './components/podcast-episodes-list'
 
 const Podcast = (): JSX.Element => {
