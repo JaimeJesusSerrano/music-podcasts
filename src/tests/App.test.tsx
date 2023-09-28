@@ -8,7 +8,7 @@ test('Homepage', async () => {
   render(<App />)
 
   await waitFor(() => {
-    const linkElement = screen.getByText(/My Amazing Website/i)
+    const linkElement = screen.getByText(/Podcaster/i)
     expect(linkElement).toBeInTheDocument()
   })
 })

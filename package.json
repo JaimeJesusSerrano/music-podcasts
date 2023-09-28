@@ -22,7 +22,7 @@
   "scripts": {
     "build": "craco  build",
     "start": "craco  start",
-    "test": "craco --watchAll=false --detectOpenHandles"
+    "test": "craco test --detectOpenHandles --watchAll --no-cache"
   },
   "browserslist": {
     "production": [
