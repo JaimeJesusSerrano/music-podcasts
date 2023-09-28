@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
-import ItunesPodcast from 'types/api/ItunesPodcast'
 
+import ItunesPodcast from 'types/api/ItunesPodcast'
 import Podcast from 'types/model/Podcast'
 import PodcastEpisode from 'types/model/PodcastEpisode'
 
@@ -17,7 +17,7 @@ const fetchPodcast = async (id: string): Promise<Podcast | null> => {
     return {
       description: podcastEpisodeResult.description || '',
       duration: podcastEpisodeResult.trackTimeMillis || 0,
-      id: podcastEpisodeResult.trackId,
+      id: `${podcastEpisodeResult.trackId}`,
       name: podcastEpisodeResult.trackName,
       releaseDate: podcastEpisodeResult.releaseDate,
       url: podcastEpisodeResult.episodeUrl || '',
@@ -25,7 +25,7 @@ const fetchPodcast = async (id: string): Promise<Podcast | null> => {
   })
 
   const podcast: Podcast = {
-    id: podcastResult.trackId,
+    id: `${podcastResult.trackId}`,
     artist: podcastResult.artistName,
     episodes: podcastEpisodes,
     images: [podcastResult.artworkUrl100],

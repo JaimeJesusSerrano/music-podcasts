@@ -12,7 +12,7 @@ const PodcastListItem = ({ podcast }: Props): JSX.Element => {
 
   return (
     <div className='w-52 p-4 flex flex-col justify-self-center border border-gray-200 shadow-md cursor-pointer'>
-      <a href={routes.podcast.path.replace(':podcastId', podcast.id)}>
+      <a href={routes.podcast.path.replace(':podcastId', `${podcast.id}`)}>
         {podcast.images?.length ? (
           <div className='flex justify-center	'>
             <img

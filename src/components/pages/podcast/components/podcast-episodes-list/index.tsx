@@ -28,7 +28,9 @@ const PodcastEpisodes = ({ podcastEpisodes, podcastId }: Props): JSX.Element => 
               <td className='p-4 border border-gray-200 text-left'>
                 <a
                   className='cursor-pointer text-cyan-500'
-                  href={routes.podcastEpisode.path.replace(':podcastId', podcastId).replace(':episodeId', episode.id)}
+                  href={routes.podcastEpisode.path
+                    .replace(':podcastId', podcastId)
+                    .replace(':episodeId', `${episode.id}`)}
                 >
                   {episode.name}
                 </a>

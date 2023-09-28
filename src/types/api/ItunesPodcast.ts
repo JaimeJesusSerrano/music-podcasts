@@ -5,7 +5,7 @@ interface ItunesPodcastData {
   episodeUrl?: string
   kind: 'podcast-episode' | 'podcast'
   releaseDate?: Date
-  trackId: string
+  trackId: number
   trackName: string
   trackTimeMillis?: number
 }
