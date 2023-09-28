@@ -6,7 +6,9 @@
     "node": ">= 18.0.0"
   },
   "dependencies": {
+    "@tanstack/query-sync-storage-persister": "4.35.3",
     "@tanstack/react-query": "4.35.3",
+    "@tanstack/react-query-persist-client": "4.35.5",
     "axios": "1.4.0",
     "i18next": "21.8.11",
     "react": "18.2.0",

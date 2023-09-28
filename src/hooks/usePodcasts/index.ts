@@ -6,8 +6,8 @@ const usePodcasts = (limit: number = 100) =>
   useQuery({
     queryKey: ['podcasts', limit],
     queryFn: () => fetchPodcasts(limit),
-    cacheTime: 86400, // 1 day
-    staleTime: 86400, // 1 day
+    cacheTime: 1000 * 60 * 60 * 24, // 24 hours
+    staleTime: 1000 * 60 * 60 * 24, // 24 hours
   })
 
 export default usePodcasts
