@@ -11,6 +11,7 @@ const Podcast = (): JSX.Element => {
   const { podcastId } = useParams()
   const { isLoading, error, data: podcast } = usePodcast(podcastId as string)
 
+  if (!podcastId) return <MainTemplate>Wrong podcast id</MainTemplate>
   if (isLoading) return <MainTemplate>Loading</MainTemplate>
   if (error || !podcast) return <MainTemplate>Error</MainTemplate>
 
@@ -26,7 +27,7 @@ const Podcast = (): JSX.Element => {
 
           {podcast.episodes?.length ? (
             <div className='my-6 border border-gray-200 shadow-md'>
-              <PodcastEpisodes podcastEpisodes={podcast.episodes} />
+              <PodcastEpisodes podcastEpisodes={podcast.episodes} podcastId={podcastId} />
             </div>
           ) : (
             <></>
