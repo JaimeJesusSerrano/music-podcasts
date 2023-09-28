@@ -2,6 +2,7 @@ import React from 'react'
 
 import routes from 'config/routes'
 import PodcastEpisode from 'types/model/PodcastEpisode'
+import { formatDate, getHourFormatByMilliseconds } from 'utils/dates'
 
 interface Props {
   podcastEpisodes: PodcastEpisode[]
@@ -32,8 +33,8 @@ const PodcastEpisodes = ({ podcastEpisodes, podcastId }: Props): JSX.Element => 
                   {episode.name}
                 </a>
               </td>
-              <td className='p-4 border border-gray-200 text-left'>{episode.releaseDate?.toString() || ''}</td>
-              <td className='p-4 border border-gray-200 text-left'>{episode.duration}</td>
+              <td className='p-4 border border-gray-200 text-left'>{formatDate(episode.releaseDate?.toString())}</td>
+              <td className='p-4 border border-gray-200 text-left'>{getHourFormatByMilliseconds(episode.duration)}</td>
             </tr>
           )
         })}
