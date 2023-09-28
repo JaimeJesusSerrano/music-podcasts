@@ -1,5 +1,6 @@
 import React from 'react'
 
+import ReactAudioPlayer from 'react-audio-player'
 import { useParams } from 'react-router-dom'
 
 import PodcastCard from 'components/molecules/podcast-card'
@@ -29,7 +30,9 @@ const PodcastEpisode = (): JSX.Element => {
             <div className='mt-2'>
               <pre className='whitespace-pre-wrap'>{podcastEpisode.description}</pre>
             </div>
-            <div className='my-4 pt-4 border-t'>{podcastEpisode.url}</div>
+            <div className='my-4 pt-4 border-t'>
+              <ReactAudioPlayer className='w-full' controls src={podcastEpisode.url} />
+            </div>
           </div>
         </div>
       </div>
