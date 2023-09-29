@@ -23,6 +23,7 @@
   },
   "scripts": {
     "build": "craco  build",
+    "build:dev": "craco build --config craco.config.dev.js",
     "start": "craco  start",
     "test": "craco test --detectOpenHandles --watchAll --no-cache"
   },
