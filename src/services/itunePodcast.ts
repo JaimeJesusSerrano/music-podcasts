@@ -2,6 +2,7 @@ import ItunesPodcast from 'types/api/ItunesPodcast'
 import ItunesPodcasts from 'types/api/ItunesPodcasts'
 import Podcast from 'types/model/Podcast'
 import PodcastEpisode from 'types/model/PodcastEpisode'
+import { getProtectedUrl } from 'utils/cors'
 
 const fetchPodcasts = async (limit: number = 100): Promise<Podcast[]> => {
   let parsed: ItunesPodcasts
@@ -32,7 +33,9 @@ const fetchPodcastWithEpisodes = async (id: string): Promise<Podcast | null> => 
   let parsed: ItunesPodcast
 
   try {
-    const response = await fetch(`https://itunes.apple.com/lookup?id=${id}&entity=podcastEpisode&limit=200`)
+    const response = await fetch(
+      getProtectedUrl(`https://itunes.apple.com/lookup?id=${id}&entity=podcastEpisode&limit=200`)
+    )
     parsed = await response.json()
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (e: any) {
