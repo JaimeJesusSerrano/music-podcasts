@@ -3,6 +3,7 @@ import React from 'react'
 import ReactAudioPlayer from 'react-audio-player'
 import { useParams } from 'react-router-dom'
 
+import LoadingSpinner from 'components/atoms/loading-spinner'
 import PodcastCard from 'components/molecules/podcast-card'
 import MainTemplate from 'components/templates/main'
 import usePodcast from 'hooks/usePodcast'
@@ -14,7 +15,14 @@ const PodcastEpisode = (): JSX.Element => {
 
   if (!episodeId) return <MainTemplate>Wrong episode id</MainTemplate>
   if (!podcastId) return <MainTemplate>Wrong podcast id</MainTemplate>
-  if (isLoading) return <MainTemplate>Loading</MainTemplate>
+  if (isLoading)
+    return (
+      <MainTemplate>
+        <div className='mt-12 flex justify-center'>
+          <LoadingSpinner className='h-12 w-12' />
+        </div>
+      </MainTemplate>
+    )
   if (error || !podcast || !podcastEpisode) return <MainTemplate>Error</MainTemplate>
 
   return (

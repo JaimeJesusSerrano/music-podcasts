@@ -5,6 +5,7 @@ import usePodcasts from 'hooks/usePodcasts'
 
 import FilterBar from './components/filter-bar'
 import PodcastList from './components/podcast-list'
+import LoadingSpinner from 'components/atoms/loading-spinner'
 
 const Home = (): JSX.Element => {
   const { isLoading, error, data: podcasts } = usePodcasts()
@@ -31,7 +32,13 @@ const Home = (): JSX.Element => {
         />
       </div>
 
-      {isLoading ? <div>Loading</div> : <></>}
+      {isLoading ? (
+        <div className='mt-12 flex justify-center'>
+          <LoadingSpinner className='h-12 w-12' />
+        </div>
+      ) : (
+        <></>
+      )}
       {error ? <div>There is an error</div> : <></>}
       {!isLoading && !error ? (
         <div className='my-12 px-4'>
